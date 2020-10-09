@@ -1,5 +1,12 @@
+/* https://www.pngjoy.com/download/s9z3c9m9m2e3v9_food-flying-ingredients-pizza-png-download/ */
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding-top: 44px;
+  color: #000000;
 }
 
 .container {
@@ -11,20 +18,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 }
 
-.search-input {
-  background: #FFFFFF;
-  border: 1px solid #D9D9D9;
+.input {
+  border: 1px solid #d9d9d9;
   border-radius: 2px;
-  height: 40px;
-  width: 640px;
+  padding: 8px 0;
   font-size: 16px;
   line-height: 24px;
-  background-image: url(../img/home.svg);
-  background-position: left 11px center;
-  background-repeat: no-repeat;
   padding-left: 32px;
+}
+
+.input-address {
+  width: 640px;
+  background: #ffffff url(../img/home.svg) no-repeat left 11px center;
+}
+
+.input-search {
+  width: 306px;
+  background: #ffffff url(../img/inputSearch.svg) no-repeat left 11px center;
 }
 
 .buttons {
@@ -36,8 +49,8 @@
   display: flex;
   align-items: center;
   padding: 8px 16px;
-  background: #FFFFFF;
-  border: 1px solid #D9D9D9;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
   box-sizing: border-box;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
   border-radius: 2px;
@@ -47,12 +60,127 @@
 }
 
 .button-primary {
-  background: #1890FF;
-  border: 1px solid #1890FF;
-  color: #FFFFFF;
+  background: #1890ff;
+  border: 1px solid #1890ff;
+  color: #ffffff;
   margin-right: 10px;
 }
 
 .button-icon {
   margin-right: 6px;
+}
+
+.promo {
+  box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+  background: #fff1b8 url(../img/promoImg.png) no-repeat bottom -80px right 35px /
+    50%;
+  border-radius: 10px;
+  padding: 68px 70px;
+  color: #302c34;
+  margin-bottom: 56px;
+}
+.promo-title {
+  font-weight: bold;
+  font-size: 39px;
+  line-height: 46px;
+}
+
+.promo-text {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  max-width: 540px;
+}
+.restorats {
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.section-title {
+  font-size: 36px;
+  line-height: 42px;
+  margin: 0;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.card {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 7px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.card-image {
+  width: 384px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 20px 23px 35px;
+}
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.tag {
+  color: #ffffff;
+  background: #262626;
+  padding: 1px 8px;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 2px;
+}
+.card-info {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  font-size: 18px;
+  line-height: 32px;
+  color: #ffc107;
+  margin-right: 26px;
+}
+.rating-star {
+  margin-right: 5px;
+}
+
+.price,
+.category {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  color: #8c8c8c;
+}
+.category {
+  margin-left: 12px;
+  overflow-wrap: normal;
+}
+.price::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 25px;
+  display: inline-block;
+  background: #8c8c8c;
+  vertical-align: middle;
+  margin-left: 12px;
 }
