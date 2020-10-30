@@ -21,6 +21,9 @@ close.addEventListener('click', toggleModal);
 
 
 const toogleModalAuth = () => {
+  loginInput.style.backgroundColor = ''; // не должны быть здесь
+  loginInput.placeholder = ''; // не должны быть здесь
+
   modalAuth.classList.toggle('is-open');
 };
 
@@ -52,8 +55,6 @@ const notAuthorized = () => {
 
   const logIn = (event) => {
     event.preventDefault();
-    loginInput.style.backgroundColor = '';
-    loginInput.placeholder = '';
 
     if (loginInput.value) {
     login = loginInput.value;
@@ -62,19 +63,35 @@ const notAuthorized = () => {
     localStorage.setItem('deliveryUser', login);
 
     buttonAuth.removeEventListener('click' , toogleModalAuth);
-    closeAuth.removeEventListener('click' , toogleModalAuth);
+
+    document.removeEventListener('click', (event) => { //TODO: доделать
+      const { target } = event;
+      console.log(target.closest);
+      if (target=== modalAuth || target === closeAuth) {
+        toogleModalAuth();
+      }
+    })
+    
     logInForm.removeEventListener('submit', logIn);
-    logInForm.reset();
+    checkAuth();
   }
   else {
     loginInput.style.backgroundColor = '#ff1e0c87';
     loginInput.placeholder = 'enter login';
   }
-  checkAuth();
-}
+  logInForm.reset();
+};
+
+document.addEventListener('click', (event) => { //TODO: доделать
+  const { target } = event;
+  console.log(target);
+  if (target=== modalAuth || target === closeAuth) {
+    toogleModalAuth();
+  }
+})
   
   buttonAuth.addEventListener('click' , toogleModalAuth);
-  closeAuth.addEventListener('click' , toogleModalAuth);
+  // closeAuth.addEventListener('click' , toogleModalAuth);
   logInForm.addEventListener('submit', logIn);
 };
 
